@@ -5,6 +5,7 @@ import Login from "./components/Login"
 import InicioAdmin from "./components/InicioAdmin"
 import InicioUser from "./components/InicioUser"
 import Users from "./components/Users"
+import Reservas from "./components/Reservas"
 import {auth} from "./firebaseconfig"
 
 function App() {
@@ -28,11 +29,12 @@ function App() {
 
                   usuario !== null ?
                       (
-                          usuario === "josemaria.munoz89@gmail.com" ?
+                          usuario === "user1@user1.com" ?
                               (
                                   <Switch>
                                       <Route exact path="/" component={InicioAdmin}/>
                                       <Route exact path="/users" component={Users}/>
+                                      <Route exact path="/reservas" component={Reservas}/>
                                   </Switch>
                               )
                               :

@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import {Link, useHistory} from "react-router-dom"
 import {auth} from "../firebaseconfig";
 
-import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
+import { faSignOutAlt, faHome } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import Logo from '../img/img.png'
@@ -35,14 +35,14 @@ const Menu = () => {
                         {
                             usuario !== null ?
                                 (
-                                    <Link className="nav-link" to="/">INICIO</Link>
+                                    <Link className="nav-link" to="/"><FontAwesomeIcon icon={faHome}/></Link>
                                 ) :
                                 (
                                     <span/>
                                 )
                         }
                     </li>
-                    <li className="nav-item">
+                    {/*<li className="nav-item">
                         {
                             usuario !== null ?
                                 (
@@ -75,7 +75,7 @@ const Menu = () => {
                                     <span/>
                                 )
                         }
-                    </li>
+                    </li>*/}
                 </ul>
                 {
                     usuario ?

@@ -24,7 +24,9 @@ const Login = () => {
                 historial.push('/')
             })
             .catch((err) => {
-                if (err.code === 'auth/wrong-password') serMsgError('Password incorrecta')
+                console.log(err)
+                if (err.code === 'auth/wrong-password' || err.code === 'auth/user-not-found') serMsgError('Usuario o contraseña incorrectos')
+                if (err.code === 'auth/user-disabled') serMsgError('Tu cuenta ha sido deshabilitada, contacta con el administrador')
             })
     }
 
